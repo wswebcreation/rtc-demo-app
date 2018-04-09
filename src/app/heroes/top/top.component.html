@@ -1,0 +1,27 @@
+<div class="flex-container">
+  <h2>Most liked heroes</h2>
+  <mat-progress-spinner mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
+</div>
+
+<mat-grid-list cols="3" rowHeight="1:1" gutterSize="15">
+
+  <mat-grid-tile *ngFor="let hero of heroes">
+      <mat-card class="hero-card">
+      <mat-card-header>
+        <img *ngIf="hero.default" (click)="details(hero);" mat-card-avatar
+             src="assets/images/heroes/{{hero.id}}-thumbnail.jpg">
+        <img *ngIf="!hero.default" (click)="details(hero);" mat-card-avatar
+             src="assets/images/heroes/default.png">
+        <mat-card-title [ngClass]="{'cp': hero.default}" (click)="details(hero);">{{hero.name}}</mat-card-title>
+        <mat-card-subtitle [ngClass]="{'cp': hero.default}" (click)="details(hero);">{{hero.alterEgo}}</mat-card-subtitle>
+        <div class="flex-spacer"></div>
+        <p class="likes">{{hero.likes}}</p>
+        <mat-icon matTooltip="{{(canVote ? 'Can vote' : 'Cannot vote')}}"
+                  [matTooltipPosition]="'above'" class="like-icon" (click)="like(hero)">favorite
+        </mat-icon>
+      </mat-card-header>
+      <img mat-card-image *ngIf="hero.default" src="assets/images/heroes/{{hero.id}}.jpg">
+      <img mat-card-image *ngIf="!hero.default" src="assets/images/heroes/default.png">
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

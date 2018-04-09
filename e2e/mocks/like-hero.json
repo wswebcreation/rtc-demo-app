@@ -1,0 +1,15 @@
+{
+  "expression": "heroes/\\d+/like",
+  "method": "POST",
+  "name": "like a hero",
+  "isArray": false,
+  "responses": {
+    "default": {
+      "default": true,
+      "status": 200
+    },
+    "error": {
+      "status": 500
+    }
+  }
+}
