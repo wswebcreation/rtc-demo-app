@@ -11,10 +11,7 @@
     "e2e:home": "ng e2e --serve false --prod --specs=./e2e/home/**/*.e2e-spec.ts",
     "e2e:heroeslist": "ng e2e --serve false --prod --specs=./e2e/heroes-list/**/*.e2e-spec.ts",
     "lint": "ng lint",
-    "ci": "npm run lint && npm run test && npm run e2e",
     "sme": "ng build && source-map-explorer dist/main.bundle.js",
-    "release": "standard-version && git push --follow-tags origin master",
-    "docker": "docker build -t angularexampleapp . && docker run -d -p 4200:80 angularexampleapp"
   },
   "private": true,
   "engines": {
