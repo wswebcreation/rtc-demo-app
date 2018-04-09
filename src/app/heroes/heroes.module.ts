@@ -1,36 +1,44 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-import {HeroRoutingModule} from './heroes-routing.module';
-import {SharedModule} from '../shared/modules/shared.module';
-
-import {HeroListComponent, RemoveHeroDialogComponent} from './hero-list/hero-list.component';
-import {HeroService} from './shared/hero.service';
-import {HeroDetailComponent} from './hero-detail/hero-detail.component';
+import {HeroesService} from './heroes.service';
+import {HttpClientModule} from '@angular/common/http';
+import {OverviewComponent} from './overview/overview.component';
+import {DetailsComponent} from './details/details.component';
 import {HeroesComponent} from './heroes.component';
+import {HeroesRoutingModule} from './heroes.routing.module';
+import {
+  MatCardModule,
+  MatDialogModule,
+  MatGridListModule,
+  MatIconModule,
+  MatListModule,
+  MatProgressSpinnerModule,
+  MatSnackBarModule,
+  MatTooltipModule
+} from '@angular/material';
+import {TopComponent} from './top/top.component';
+import {ErrorModule} from './error/error.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
-    SharedModule,
-    HeroRoutingModule,
-    ReactiveFormsModule
-  ],
-  declarations: [
-    HeroesComponent,
-    HeroListComponent,
-    RemoveHeroDialogComponent,
-    HeroDetailComponent
-  ],
-  entryComponents: [
-    RemoveHeroDialogComponent
+    ErrorModule,
+    HttpClientModule,
+    HeroesRoutingModule,
+    MatCardModule,
+    MatDialogModule,
+    MatGridListModule,
+    MatIconModule,
+    MatListModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatTooltipModule
   ],
   providers: [
-    HeroService
-  ]
+    HeroesService
+  ],
+  declarations: [DetailsComponent, HeroesComponent, OverviewComponent, TopComponent],
+  exports: [DetailsComponent, HeroesComponent, OverviewComponent, TopComponent]
 })
-
 export class HeroesModule {
 }
