@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "start": "ng serve",
+    "start": "ng serve --proxy-config ./e2e/proxy.config.json",
+    "start.mocking": "node ./e2e/server.js",
     "test": "ng test --watch=false --code-coverage",
     "e2e": "ng e2e --prod",
     "e2e:home": "ng e2e --serve false --prod --specs=./e2e/home/**/*.e2e-spec.ts",
@@ -57,6 +58,7 @@
     "karma-jasmine-html-reporter": "0.2.2",
     "karma-remap-istanbul": "0.6.0",
     "moment": "2.20.1",
+    "ng-apimock": "^1.4.6",
     "protractor": "5.3.0",
     "source-map-explorer": "1.5.0",
     "standard-version": "4.3.0",

@@ -13,9 +13,7 @@ We forked this project from [angular5-example-app](https://github.com/Ismaestro/
 
 - `npm i` - Installs everything needed
 - `npm start` - Starts the app. Then, go to `localhost:4200`
-- `npm run test` - Runs unit tests with karma and jasmine
-- `npm run e2e` - Runs end to end tests
-- `npm run e2e:home` - Runs end to end tests only for the home directory. There are more commands like this one, for development purposes
+- `npm startmocking` - Starts the mocking. Then, go to `localhost:3000/mocking`
 
 
 > **Windows: use precompilation to speed up**

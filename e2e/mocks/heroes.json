@@ -1,0 +1,74 @@
+{
+  "expression": "heroes",
+  "method": "GET",
+  "name": "getHeroes",
+  "isArray": true,
+  "responses": {
+    "default": {
+      "default": true,
+      "status": 200,
+      "headers": {},
+      "data": [
+        {
+          "id": 5,
+          "name": "Iron man",
+          "alterEgo": "Tony Stark",
+          "likes": 1191,
+          "default": true
+        },
+        {
+          "id": 6,
+          "name": "Capitan America",
+          "alterEgo": "Steven Grant Rogers",
+          "likes": 1722,
+          "default": true
+        },
+        {
+          "id": 2,
+          "name": "Superman",
+          "alterEgo": "Clark Kent",
+          "likes": 1093,
+          "default": true
+        },
+        {
+          "id": 3,
+          "name": "Batman",
+          "alterEgo": "Bruce Wayne",
+          "likes": 1087,
+          "default": true
+        },
+        {
+          "id": 1,
+          "name": "Spiderman",
+          "alterEgo": "Peter Parker",
+          "likes": 13850,
+          "default": true
+        },
+        {
+          "id": 7,
+          "name": "Hulk",
+          "alterEgo": "Bruce Banner",
+          "likes": 1089,
+          "default": true
+        },
+        {
+          "id": 8,
+          "name": "Deadpool",
+          "alterEgo": "Wade Winston Wilson",
+          "likes": 16775,
+          "default": true
+        },
+        {
+          "id": 4,
+          "name": "Wonder woman",
+          "alterEgo": "Diana Prince",
+          "likes": 4662,
+          "default": true
+        }
+      ]
+    },
+    "error": {
+      "status": 500
+    }
+  }
+}
