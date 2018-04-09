@@ -2,6 +2,7 @@
     <nav>
         <div fxFlex fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
             <div fxFlex="40">
+                <a href="https://romaniatesting.ro/" target="_blank"><img src="assets/images/rtc-logo.png"></a>
                 <a mat-raised-button *ngFor="let item of menuItems" routerLink="{{item.link}}">
                     {{item.name | uppercase}}
                 </a>
