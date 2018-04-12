@@ -13,7 +13,17 @@ We forked this project from [angular5-example-app](https://github.com/Ismaestro/
 
 - `npm i` - Installs everything needed
 - `npm start` - Starts the app. Then, go to `localhost:4200`
-- `npm startmocking` - Starts the mocking. Then, go to `localhost:3000/mocking`
+- `npm run start.mocking` - Starts the mocking. Then, go to `localhost:3000/mocking`
+
+### Testing with protractor
+For running the protractor tests a selenium server needs to be started. The server will be downloaded and updated after install.
+If this doesn't work run `npm run webdriver.update` after install.
+
+To run the tests the the following needs to be started:
+- the app, see `npm start`
+- the mocking server, see `npm run start.mocking`
+- the selenium server. Run `npm run webdriver.start`
+- and run the tests, use `npm run e2e`, see [protractor.conf.js](./e2e/config/protractor.conf.js) how to provide specific features / tags
 
 
 > **Windows: use precompilation to speed up**
