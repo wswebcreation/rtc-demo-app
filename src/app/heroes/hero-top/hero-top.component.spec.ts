@@ -7,7 +7,37 @@ import {TranslateModule} from '@ngx-translate/core';
 import {APP_CONFIG, AppConfig} from '../../config/app.config';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
+import "rxjs/add/observable/of";
+import {Observable} from "rxjs/Observable";
+
 describe('HeroTopComponent', () => {
+    const HEROES = [
+        {
+            "id": 1,
+            "name": "batman",
+            "default": true
+        },
+        {
+            "id": 2,
+            "name": "spiderman",
+            "default": false
+        },
+        {
+            "id": 3,
+            "name": "ironman",
+            "default": false
+        },
+        {
+            "id": 4,
+            "name": "superman",
+            "default": false
+        },
+        {
+            "id": 5,
+            "name": "aquaman",
+            "default": false
+        }
+    ];
   let fixture;
   let component;
   let heroService;
@@ -41,7 +71,8 @@ describe('HeroTopComponent', () => {
 
   it('should initialice component', fakeAsync(() => {
     fixture.detectChanges();
-    spyOn(heroService, 'getAllHeroes').and.returnValue(Promise.resolve(true));
+      spyOn(heroService, "getAllHeroes").and.returnValue(Observable.of(HEROES));
+    component.ngOnInit();
     tick();
     fixture.detectChanges();
     expect(component.heroes.length).toBe(AppConfig.topHeroesLimit);
