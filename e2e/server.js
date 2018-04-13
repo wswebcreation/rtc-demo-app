@@ -16,22 +16,17 @@ ngApimock.run(ngApimockConfig);
 ngApimock.watch(ngApimockConfig.src);
 
 const app = express();
-
-const proxyOptions = {
-    target: 'https://nodejs-example-app.herokuapp.com/heroes',
+const rtcProxyOptions = {
+    target: 'http://nodejs-example-app.herokuapp.com',
     changeOrigin: true,
-    ws: false,
+    ws: false
 };
-const rtcProxy = proxy(proxyOptions);
-
 app.set('port', (process.env.PORT || 3000));
-app.use('/mocking', express.static('.tmp/ngApimock'));
 
+app.use('/mocking', express.static('.tmp/ngApimock'));
 app.use(ngApimockRequest.ngApimockRequest);
-app.on('proxyRes', function (proxyRes, req, res) {
-    res.setHeader('Origin', 'https://angularexampleapp.com');
-});
-app.use('/', rtcProxy);
+app.use('/', proxy(rtcProxyOptions));
+
 app.listen(app.get('port'), function () {
     console.log('app running on port', app.get('port'));
 });
