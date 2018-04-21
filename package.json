@@ -1,15 +1,17 @@
 {
-  "name": "rtc-demo",
-  "version": "0.0.0",
+  "name": "rtc-demo-app",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4300 --proxy-config ./e2e/proxy.config.json",
     "start.mocking": "node ./e2e/server.js",
     "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "protractor e2e/config/protractor.conf.js",
+    "postinstall": "npm run webdriver.update",
+    "webdriver.update": "webdriver-manager update",
+    "webdriver.start": "webdriver-manager start",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
