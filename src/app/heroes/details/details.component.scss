@@ -1,0 +1,56 @@
+:host {
+
+  /deep/ .mat-figure {
+    justify-content: unset;
+    align-items: unset;
+  }
+
+  /deep/ .mat-card {
+
+    .mat-card-header {
+        height: 63px;
+
+      .mat-card-header-text {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 0;
+      }
+
+    }
+    /deep/ .mat-card-avatar {
+      padding-right: 16px;
+      //height: 55px !important;
+      //width: 55px !important;
+    }
+
+  }
+
+  .flex-container {
+    display: flex;
+    padding: 0 6%;
+    align-items: stretch;
+
+    .flex-item {
+      flex-grow: 1;
+    }
+  }
+
+  .likes {
+    padding-right: 10px;
+  }
+}
+
+/deep/ .mat-progress-spinner {
+  margin: 15% auto;
+  circle, .mat-spinner circle {
+    stroke: #ffdc1a;
+  }
+}
+
+.like-icon {
+  color: #DC143C;
+  cursor: pointer;
+}

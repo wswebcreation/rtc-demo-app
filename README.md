@@ -1,36 +1,27 @@
-# Demo app with Angular 5 + Angular CLI + Angular Material + Angular Example Library + ng-Apimock + protractor-image-comparison
+# RtcDemo
 
-## Intro
-This project will be used during the workshop [*TESTING BEYOND THE DEFAULT CLICK-PATHS*](https://romaniatesting.ro/sessions/testing-beyond-the-default-click-paths/) on the 11th of May 2018 in  Cluj-Napoca, Romania during the Romanian Testing Conference 2018.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
-The workshop will be given by [Wim Selles](https://romaniatesting.ro/speakers/wim-selles/) ([wswebcreation](https://github.com/wswebcreation/)) and [Mischa Dasberg](https://romaniatesting.ro/speakers/mischa-dasberg/) ([mdasberg](https://github.com/mdasberg))
+## Development server
 
-We forked this project from [angular5-example-app](https://github.com/Ismaestro/angular5-example-app), made by [Ismael Ramos](https://github.com/Ismaestro) and adjusted it to our needs.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Usage
+## Code scaffolding
 
-**Warning: we strongly recommend node >=v6.9.0 and npm >=3.0.0**
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-- `npm i` - Installs everything needed
-- `npm start` - Starts the app. Then, go to `localhost:4200`
-- `npm run start.mocking` - Starts the mocking. Then, go to `localhost:3000/mocking`
+## Build
 
-### Testing with protractor
-For running the protractor tests a selenium server needs to be started. The server will be downloaded and updated after install.
-If this doesn't work run `npm run webdriver.update` after install.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-To run the tests the the following needs to be started:
-- the app, see `npm start`
-- the mocking server, see `npm run start.mocking`
-- the selenium server. Run `npm run webdriver.start`
-- and run the tests, use `npm run e2e`, see [protractor.conf.js](./e2e/config/protractor.conf.js) how to provide specific features / tags
+## Running unit tests
 
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-> **Windows: use precompilation to speed up**
+## Running end-to-end tests
 
-    `tsc --project tsconfig.json`
-    `npm start`
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## License
+## Further help
 
-MIT
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

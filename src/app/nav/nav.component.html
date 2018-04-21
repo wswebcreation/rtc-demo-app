@@ -1,0 +1,21 @@
+<header>
+  <nav>
+    <a href="https://romaniatesting.ro/" target="_blank"><img src="assets/images/rtc-logo.png"></a>
+    <a mat-button routerLink="/">HOME</a>
+    <a mat-button routerLink="/heroes">HEROES LIST</a>
+
+    <span class="fill-space"></span>
+
+    <mat-form-field>
+      <input type="text" placeholder="Find a hero" matInput [formControl]="heroFormControl" [matAutocomplete]="heroes">
+    </mat-form-field>
+
+    <mat-autocomplete #heroes="matAutocomplete">
+      <mat-option *ngFor="let hero of filteredHeroes"
+                  (onSelectionChange)="searchHero(hero)"
+                  [value]="hero.name">
+        {{hero.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </nav>
+</header>
