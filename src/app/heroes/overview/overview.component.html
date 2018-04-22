@@ -1,0 +1,21 @@
+<div class="flex-container">
+  <h2>Heroes</h2>
+  <mat-progress-spinner mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
+</div>
+
+<div class="flex-container">
+  <div class="flex-item">
+    <mat-list>
+    <mat-list-item *ngFor="let hero of heroes">
+      <img *ngIf="hero.default" (click)="details(hero);" mat-list-avatar
+           src="assets/images/heroes/{{hero.id}}-thumbnail.jpg">
+      <img *ngIf="!hero.default" (click)="details(hero);" mat-list-avatar
+           src="assets/images/heroes/default.png">
+      <h3 matLine [ngClass]="{'cp': hero.default}" (click)="details(hero);">{{ hero.name }}</h3>
+      <p mat-line [ngClass]="{'cp': hero.default}" (click)="details(hero);">{{hero.alterEgo}}</p>
+      <p class="likes">{{hero.likes}}</p>
+      <mat-icon matTooltip="{{(canVote ? 'Can vote' : 'Cannot vote')}}"
+                [matTooltipPosition]="'above'" class="like-icon" (click)="like(hero)">favorite</mat-icon>
+    </mat-list-item>
+  </mat-list></div>
+</div>

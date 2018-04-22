@@ -1,15 +1,13 @@
-import {AppConfig} from '../../src/app/config/app.config';
-import {HomePage} from './home-page';
+import {HomePage} from "./home-page";
 
-describe('Home page', function () {
+describe("Home page", function () {
   let page;
 
   beforeEach(() => {
     page = new HomePage();
   });
 
-  it('should contains heroes limit', () => {
-    HomePage.navigateTo();
-    expect<any>(HomePage.getNumberHeroes()).toBe(AppConfig.topHeroesLimit);
-  });
+  it("should contains heroes limit", () =>
+    page.navigateTo().then(() =>
+      expect(page.getNumberHeroes()).toBe(4)));
 });

@@ -1,0 +1,24 @@
+<div class="flex-container">
+  <h2>Hero details</h2>
+  <mat-progress-spinner mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
+</div>
+
+<div class="flex-container">
+  <mat-card class="hero-card">
+    <mat-card-header>
+      <img *ngIf="hero.default" (click)="details(hero);" mat-card-avatar
+           src="assets/images/heroes/{{hero.id}}-thumbnail.jpg">
+      <img *ngIf="!hero.default" (click)="details(hero);" mat-card-avatar
+           src="assets/images/heroes/default.png">
+      <mat-card-title>{{hero.name}}</mat-card-title>
+      <mat-card-subtitle>{{hero.alterEgo}}</mat-card-subtitle>
+      <div class="flex-spacer"></div>
+      <p class="likes">{{hero.likes}}</p>
+      <mat-icon matTooltip="{{(canVote ? 'Can vote' : 'Cannot vote')}}"
+                [matTooltipPosition]="'above'" class="like-icon" (click)="like(hero)">favorite
+      </mat-icon>
+    </mat-card-header>
+    <img mat-card-image src="assets/images/heroes/{{hero.id}}.jpg">
+  </mat-card>
+</div>
+
