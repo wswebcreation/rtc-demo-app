@@ -66,7 +66,7 @@ exports.config = {
     /**
      * Protractor config
      */
-    baseUrl: 'http://localhost:4200/',
+    baseUrl: 'http://localhost:4300/',
     seleniumAddress: 'http://localhost:4444/wd/hub/',
     disableChecks: true,
     beforeLaunch: function () {

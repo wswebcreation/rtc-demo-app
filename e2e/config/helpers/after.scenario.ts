@@ -11,7 +11,7 @@ After(function (scenarioResult: HookScenarioResult): Promise<void> {
         this.attach(browser.pendingMessage, 'text/plain');
     }
 
-    if (scenarioResult.result.status !== Status.FAILED) {
+    if (scenarioResult.result.status === Status.FAILED) {
         return saveFailedScenarioScreenshot(world, scenarioResult);
     }
 
@@ -21,7 +21,7 @@ After(function (scenarioResult: HookScenarioResult): Promise<void> {
 /**
  * Save a screenshot when a scenario failed
  */
-async function saveFailedScenarioScreenshot(world: World, scenarioResult: HookScenarioResult) {
+async function saveFailedScenarioScreenshot(world: World, scenarioResult: HookScenarioResult): Promise<void> {
     const screenshot = await(browser.takeScreenshot());
     const fileName = `[${browser.browserName.toLowerCase()}]__${upperCaseFirstLetter(scenarioResult.pickle.name
         .replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s/g, '-')
