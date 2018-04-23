@@ -9,7 +9,7 @@ import {Hero} from "../hero";
   styleUrls: ["./top.component.scss"]
 })
 export class TopComponent implements OnInit {
-  TOP_HEROES_LIMIT = 4;
+  TOP_HEROES_LIMIT = 12;
   heroes: Hero[];
   loading: boolean;
   canVote: boolean;
