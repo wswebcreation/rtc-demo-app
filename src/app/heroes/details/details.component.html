@@ -3,7 +3,7 @@
   <mat-progress-spinner mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
 </div>
 
-<div class="flex-container">
+<div class="flex-container" *ngIf="hero">
   <mat-card class="hero-card">
     <mat-card-header>
       <img *ngIf="hero.default" (click)="details(hero);" mat-card-avatar
