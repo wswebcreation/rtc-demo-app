@@ -1,3 +1,6 @@
+#medium {
+  width: 55%;
+}
 :host {
 
   /deep/ .mat-figure {
@@ -57,4 +60,10 @@
 .like-icon {
   color: #DC143C;
   cursor: pointer;
+}
+
+@media (max-width: 680px) {
+  #medium {
+    width: 100%;
+  }
 }

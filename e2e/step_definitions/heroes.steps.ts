@@ -4,10 +4,12 @@ import {expect} from '../utils/chai-imports';
 import {HeroesTopPage} from '../page-objects/heroes.top.page';
 import {NavigationComponent} from '../page-objects/navigation.component';
 import {HeroesDetailPage} from '../page-objects/heroes.details.page';
+import {ListItemComponent} from "../page-objects/components/list.component";
 
 Given('I open the heroes app', openHeroesApp);
 Given('{string} has {int} likes', checkLikes);
 Given('hero number {int} has {int} likes', checkLikes);
+Given('I go to the Heroes list page', () => NavigationComponent.heroesListButton.click());
 
 When('I like {string}', likeHero);
 When('I like hero number {int}', likeHero);
@@ -19,6 +21,10 @@ Then('the amount of likes of {string} equals {int}', checkLikes);
 Then('the amount of likes of hero number {int} equals {int}', checkLikes);
 Then('the autocomplete contains {int} heroes', checkFoundOptions);
 Then('the detailpage of {string} is shown', checkDetailPageShown);
+Then(
+  'I would see {int} listed heroes',
+  async (amount: number) => expect(await(ListItemComponent.items.count())).to.equal(amount, 'Amount of list items found')
+);
 
 /**
  * Like a hero based on his name or card number
