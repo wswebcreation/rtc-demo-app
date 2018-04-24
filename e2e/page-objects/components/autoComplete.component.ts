@@ -24,15 +24,6 @@ export class AutoCompleteComponent {
   }
 
   /**
-   * Get the amount of options
-   *
-   * @return {Promise<number>}
-   */
-  public get amountOfOptions(): Promise<number> {
-    return this.options.count();
-  }
-
-  /**
    * Get the selected option ElementFinder
    *
    * @param {number | string} needle The occurrence, count form 0, or the name

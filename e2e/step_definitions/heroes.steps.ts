@@ -62,7 +62,7 @@ async function checkLikes(selector: string | number, amount: number): Promise<vo
  * @return {Promise<void>}
  */
 async function checkFoundOptions(amount: number): Promise<void> {
-  expect(await(NavigationComponent.autoComplete.amountOfOptions))
+  expect(await(NavigationComponent.autoComplete.options.count()))
     .to.equal(amount, 'Amount of options');
 }
 
