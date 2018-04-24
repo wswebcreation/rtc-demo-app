@@ -53,10 +53,12 @@ export class HeroesService {
   }
 
   showDialog(message): void {
-    this.dialog.open(ErrorComponent, {
-      width: '300px',
-      data: {message: message}
-    });
+    if(this.dialog.openDialogs.length === 0) {
+      this.dialog.open(ErrorComponent, {
+        width: '300px',
+        data: {message: message}
+      });
+    }
   }
 
   private handleError(error: any) {
