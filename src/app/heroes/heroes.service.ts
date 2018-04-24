@@ -6,17 +6,18 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import {Hero} from './hero';
-import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
+import {MatDialog, MatSnackBar} from '@angular/material';
+import {ErrorComponent} from './error/error.component';
 
 @Injectable()
 export class HeroesService {
   public HEROES_URL = '/heroes';
   public VOTE_LIMIT = 3;
-  private SNACKBAR_DURATION = 3000;
   private headers: HttpHeaders;
 
   constructor(private http: HttpClient,
-              private snackBar: MatSnackBar) {
+              private snackBar: MatSnackBar,
+              private dialog: MatDialog) {
     this.headers = new HttpHeaders({'Content-Type': 'application/json'});
   }
 
@@ -48,9 +49,14 @@ export class HeroesService {
   }
 
   showSnackBar(name): void {
-    const config: any = new MatSnackBarConfig();
-    config.duration = this.SNACKBAR_DURATION;
-    this.snackBar.open(name, 'OK', config);
+    this.snackBar.open(name, 'OK');
+  }
+
+  showDialog(message): void {
+    this.dialog.open(ErrorComponent, {
+      width: '300px',
+      data: {message: message}
+    });
   }
 
   private handleError(error: any) {
@@ -58,7 +64,7 @@ export class HeroesService {
     if (error instanceof Response) {
       observable = Observable.throw(error.json()['error'] || 'backend server error');
     }
-    this.showSnackBar('An error occured. Please try again!');
+    this.showDialog('An error occured. Please try again!');
     return observable;
   }
 }
