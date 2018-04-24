@@ -11,3 +11,12 @@ Feature: Basic setup
     And hero number 2 has 9721 likes
     When I like hero number 2
     Then the amount of likes of hero number 2 equals 9722
+
+  Scenario: Find a hero
+    Given I open the heroes app
+    When I want to type into the "Find hero" searchbox
+    Then the autocomplete contains 30 heroes
+    When I type "Mi"
+    Then the autocomplete contains 2 heroes
+    When I select "Mischa Dasberg"
+    Then the detailpage of "Mischa Dasberg" is shown

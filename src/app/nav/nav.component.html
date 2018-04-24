@@ -1,13 +1,13 @@
 <header>
   <nav>
-    <a href="https://romaniatesting.ro/" target="_blank"><img src="assets/images/rtc-logo.png"></a>
-    <a mat-button routerLink="/">HOME</a>
-    <a mat-button routerLink="/heroes">HEROES LIST</a>
+    <a id="rtc" href="https://romaniatesting.ro/" target="_blank"><img src="assets/images/rtc-logo.png"></a>
+    <a id="home" mat-button routerLink="/">HOME</a>
+    <a id="heroes-list" mat-button routerLink="/heroes">HEROES LIST</a>
 
     <span class="fill-space"></span>
 
     <mat-form-field>
-      <input type="text" placeholder="Find a hero" matInput [formControl]="heroFormControl" [matAutocomplete]="heroes">
+      <input id="search-box" type="text" placeholder="Find a hero" matInput [formControl]="heroFormControl" [matAutocomplete]="heroes">
     </mat-form-field>
 
     <mat-autocomplete #heroes="matAutocomplete">
