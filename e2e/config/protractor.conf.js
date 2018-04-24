@@ -51,6 +51,16 @@ exports.config = {
        */
       tags: argv.tags && argv.tags !== '' ? argv.tags : ''
     },
+    chromeOptions: {
+      args: ['--no-sandbox', 'disable-infobars', '--test-type=browser'],
+      prefs: {
+        'download': {
+          'prompt_for_download': false,
+          'directory_upgrade': true,
+          'default_directory': '/tmp'
+        }
+      }
+    },
     deviceProperties: {
       browser: {
         name: 'chrome'
