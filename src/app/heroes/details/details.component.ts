@@ -31,6 +31,8 @@ export class DetailsComponent implements OnInit {
             this.loading = false;
           });
       }
+    },(error: Response) => {
+      this.loading = false;
     });
   }
 

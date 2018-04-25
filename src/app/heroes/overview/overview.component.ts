@@ -23,6 +23,8 @@ export class OverviewComponent implements OnInit {
     this.heroesService.getAllHeroes().subscribe((heroes: Hero[]) => {
       this.heroes = heroes;
       this.loading = false;
+    }, (error: Response) => {
+      this.loading = false;
     });
   }
 
@@ -36,7 +38,6 @@ export class OverviewComponent implements OnInit {
     this.heroesService.like(hero).subscribe(() => {
       this.canVote = this.heroesService.checkIfUserCanVote();
     }, (error: Response) => {
-
       console.error(error);
     });
   }
