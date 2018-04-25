@@ -1,5 +1,5 @@
 import {$, ElementFinder} from 'protractor';
-import {AutoCompleteComponent} from './components/autoComplete.component';
+import {AutoCompleteComponent} from './autoComplete.component';
 
 const SELECTORS = {
   HEROES_LIST: '#heroes-list',

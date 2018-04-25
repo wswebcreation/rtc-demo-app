@@ -1,13 +1,41 @@
 import {Then} from 'cucumber';
 import {browser} from 'protractor';
 import {expect} from '../utils/chai-imports';
-import {HeroesTopPage} from '../page-objects/heroes.top.page';
+import {HeroesDetailPage} from '../page-objects/heroes.details.page';
+import {removeStickyHeader, spaceToUnderscore} from '../utils/utils';
+import {likeHero} from './heroes.steps';
 
 Then(
-  'I would like to compare the viewport of the top heroes',
-  async (): Promise<void> => {
-    await HeroesTopPage.overview.card(1).header.likeButton.click();
-    expect(await browser.imageComparison.checkScreen('top-heroes-overview')).to.equal(0);
+  'I would like to compare the viewport of the {string}',
+  async (string: string): Promise<void> => {
+    const tagName = spaceToUnderscore(string);
+    await likeHero(1);
+    const compareResult = await browser.imageComparison.checkScreen(tagName);
+
+    expect(compareResult).to.equal(0);
+  }
+);
+
+Then(
+  'I would like to compare an element screenshot of {string}',
+  async (string: string): Promise<void> => {
+    const tagName = spaceToUnderscore(string);
+    const compareResult = await browser.imageComparison.checkElement(HeroesDetailPage.detail.card(string).element, tagName);
+
+    expect(compareResult).to.equal(0);
+  }
+);
+
+Then(
+  'I would like to compare a fullpage screenshot of the {string}',
+  async (string: string): Promise<void> => {
+    const tagName = spaceToUnderscore(string);
+    // First set the header to fixed
+    await removeStickyHeader();
+
+    const compareResult = await browser.imageComparison.checkFullPageScreen(tagName);
+
+    expect(compareResult).to.equal(0);
   }
 );
 

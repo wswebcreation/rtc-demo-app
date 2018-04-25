@@ -2,9 +2,11 @@ import {Given, When, Then} from 'cucumber';
 import {browser} from 'protractor';
 import {expect} from '../utils/chai-imports';
 import {HeroesTopPage} from '../page-objects/heroes.top.page';
-import {NavigationComponent} from '../page-objects/navigation.component';
+import {NavigationComponent} from '../page-objects/components/navigation.component';
 import {HeroesDetailPage} from '../page-objects/heroes.details.page';
-import {ListItemComponent} from "../page-objects/components/list.component";
+import {ListItemComponent} from '../page-objects/components/list.component';
+import {removeAllStyle} from '../utils/utils';
+import {NotificationComponent} from '../page-objects/components/notification.component';
 
 Given('I open the heroes app', openHeroesApp);
 Given('{string} has {int} likes', checkLikes);
@@ -42,8 +44,10 @@ async function openHeroesApp(): Promise<void> {
  *
  * @returns {Promise<void>}
  */
-async function likeHero(selector: string | number): Promise<void> {
+export async function likeHero(selector: string | number): Promise<void> {
+  // await removeAllStyle();
   await HeroesTopPage.overview.card(selector).header.likeButton.click();
+  await NotificationComponent.acceptNotification;
 }
 
 /**

@@ -36,6 +36,15 @@ export class CardComponent {
   }
 
   /**
+   * Get the element
+   *
+   * @return {ElementFinder}
+   */
+  public get element(): ElementFinder {
+    return this.elementFinder;
+  }
+
+  /**
    * Get the header component object
    */
   public get header(): HeaderComponent {
