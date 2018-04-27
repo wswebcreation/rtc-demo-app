@@ -87,14 +87,25 @@ exports.config = {
     });
   },
   onPrepare() {
+    /**
+     * For ng-apimock
+     */
     global.ngApimock = require(path.resolve(cwd, './.tmp/ngApimock/protractor.mock.js'));
+
+    /**
+     * For protractor-image-comparison
+     */
     browser.imageComparison = new protractorImageComparison({
       // Required
       baselineFolder: path.resolve(cwd, './e2e/baseline/'),
       screenshotPath: path.resolve(cwd, './.tmp/image-compare/'),
       // Optional
-      autoSaveBaseline: true,
+      // autoSaveBaseline: true,
     });
+
+    /**
+     * Get the browername and set the default screensize
+     */
     return browser.getCapabilities()
       .then((capabilities) => {
         browser.browserName = capabilities.get('browserName');
