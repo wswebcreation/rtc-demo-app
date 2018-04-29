@@ -14,13 +14,20 @@ It will be used during the workshop [*TESTING BEYOND THE DEFAULT CLICK-PATHS*](h
 
 The workshop will be given by [Wim Selles](https://romaniatesting.ro/speakers/wim-selles/) ([wswebcreation](https://github.com/wswebcreation/)) and [Mischa Dasberg](https://romaniatesting.ro/speakers/mischa-dasberg/) ([mdasberg](https://github.com/mdasberg))
 
+![App overview](./assets/app-movie.gif "App overview")
+
 ## Usage
 
+### Preparation of the workshop
 **Warning: we strongly recommend node >=v6.9.0 and npm >=3.0.0**
 
+- `git clone https://github.com/wswebcreation/rtc-demo-app.git`
+- `cd rtc-demo-app` to go into the demo folder
 - `npm i` - Installs everything needed
 - `npm start` - Starts the app. Then, go to `localhost:4200`
 - `npm run start.mocking` - Starts the mocking. Then, go to `localhost:3000/mocking`
+- go to `http://localhost:4300/` to open the demo app
+- go to `http://localhost:3000/mocking/` to open the mocking interface
 
 ### Testing with protractor
 For running the protractor tests a selenium server needs to be started. The server will automatically be downloaded and updated after install.
@@ -44,3 +51,6 @@ MIT
 
 ## Credits
 We used this project ([angular5-example-app](https://github.com/Ismaestro/angular5-example-app), made by [Ismael Ramos](https://github.com/Ismaestro)) as an idea and rewritten and adjusted it to our needs.
+
+
+// giphy homer delay
