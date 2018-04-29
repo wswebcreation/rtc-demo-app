@@ -37,7 +37,6 @@ exports.config = {
    */
   capabilities: {
     browserName: 'chrome',
-    shardTestFiles: true,
     maxInstances: 1,
     // Cucumber specific instance options
     cucumberOpts: {
@@ -100,7 +99,7 @@ exports.config = {
       baselineFolder: path.resolve(cwd, './e2e/baseline/'),
       screenshotPath: path.resolve(cwd, './.tmp/image-compare/'),
       // Optional
-      // autoSaveBaseline: true,
+      autoSaveBaseline: true,
     });
 
     /**
@@ -124,7 +123,7 @@ exports.config = {
       jsonOutputPath: '.tmp/report/json-output',
       metadataKey: 'deviceProperties',
       displayDuration: true,
-      openReportInBrowser: argv.openReportInBrowser === 'true',
+      openReportInBrowser: argv.openReportInBrowser,
       removeExistingJsonReportFile: true,
       removeOriginalJsonReportFile: true
     }
