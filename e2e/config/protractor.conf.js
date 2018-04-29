@@ -108,7 +108,8 @@ exports.config = {
       baselineFolder: path.resolve(cwd, './e2e/baseline/'),
       screenshotPath: path.resolve(cwd, './.tmp/image-compare/'),
       // Optional
-      autoSaveBaseline: true,
+      autoSaveBaseline: true, // set this to false if you want to create an automatic baseline
+      debug: false            // set this to `true` to see some debugging and see blocked out images in the diff folder
     });
 
     /**

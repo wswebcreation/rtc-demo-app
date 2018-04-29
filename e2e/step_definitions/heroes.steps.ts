@@ -51,6 +51,7 @@ async function openHeroesApp(): Promise<void> {
  */
 export async function likeHero(selector: string | number): Promise<void> {
   await HeroesTopPage.overview.card(selector).header.likeButton.click();
+  await browser.sleep(1000);
   await NotificationComponent.acceptNotification;
 }
 
