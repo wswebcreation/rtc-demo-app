@@ -29,6 +29,11 @@ The workshop will be given by [Wim Selles](https://romaniatesting.ro/speakers/wi
 - go to `http://localhost:4300/` to open the demo app
 - go to `http://localhost:3000/mocking/` to open the mocking interface
 
+> **Windows: use precompilation to speed up**
+
+    `tsc --project tsconfig.json`
+    `npm start`
+
 ### Testing with protractor
 For running the protractor tests a selenium server needs to be started. The server will automatically be downloaded and updated after install.
 If this doesn't work run `npm run webdriver.update` after install.
@@ -38,12 +43,6 @@ To run the tests the the following needs to be started:
 - the mocking server, see `npm run start.mocking`
 - the selenium server. Run `npm run webdriver.start`
 - and run the tests, use `npm run e2e`, see [protractor.conf.js](./e2e/config/protractor.conf.js) how to provide specific features / tags
-
-
-> **Windows: use precompilation to speed up**
-
-    `tsc --project tsconfig.json`
-    `npm start`
 
 ## License
 
