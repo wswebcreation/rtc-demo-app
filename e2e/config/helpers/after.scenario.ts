@@ -10,10 +10,6 @@ import {upperCaseFirstLetter, World} from '../../utils/utils';
 After(function (scenarioResult: HookScenarioResult): Promise<void> {
     const world: any = this;
 
-    if (scenarioResult.result.status === Status.PENDING) {
-        this.attach(browser.pendingMessage, 'text/plain');
-    }
-
     if (scenarioResult.result.status === Status.FAILED) {
         return saveFailedScenarioScreenshot(world, scenarioResult);
     }
