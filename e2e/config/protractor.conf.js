@@ -1,3 +1,4 @@
+const fs = require('fs-extra');
 const argv = require('yargs').argv;
 const path = require('path');
 const protractorImageComparison = require('protractor-image-comparison');
@@ -80,12 +81,20 @@ exports.config = {
   baseUrl: 'http://localhost:4300/',
   seleniumAddress: 'http://localhost:4444/wd/hub/',
   disableChecks: true,
-  beforeLaunch: function () {
+  beforeLaunch: () => {
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'
     });
+
+    console.log(`
+=================================================================================
+    The '.tmp/report' and '.tmp/screenshots'-folder is being removed. 
+    This is the folder that holds all the reports and failure screenshots.
+=================================================================================\n`);
+    fs.emptyDirSync('.tmp/report');
+    fs.emptyDirSync('.tmp/screenshots');
   },
-  onPrepare() {
+  onPrepare: () => {
     /**
      * For ng-apimock
      */
