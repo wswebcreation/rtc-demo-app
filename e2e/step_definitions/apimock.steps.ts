@@ -20,7 +20,8 @@ async function delayHeroesServiceGetHeroes(): Promise<void | string> {
   await browser.waitForAngularEnabled(false);
   // IMPLEMENT THE DELAY, SEE
   // https://github.com/mdasberg/ng-apimock#available-functions
-  await ngApimock.delayResponse('get all heroes', 3000);
+
+  return Promise.resolve('pending');
 }
 
 /**
@@ -32,7 +33,8 @@ async function delayHeroesServiceGetHeroes(): Promise<void | string> {
 async function setVariable(key: string, value: string): Promise<void | string> {
   // IMPLEMENT THE VARIABLES, SEE
   // https://github.com/mdasberg/ng-apimock#available-functions
-  await ngApimock.setGlobalVariable(key, value);
+
+  return Promise.resolve('pending');
 }
 
 /**
@@ -42,5 +44,6 @@ async function setVariable(key: string, value: string): Promise<void | string> {
 async function takeHeroesServiceGetHeroesOffline(): Promise<void | string> {
   // IMPLEMENT THE DELAY, SEE
   // https://github.com/mdasberg/ng-apimock#available-functions
-  await ngApimock.selectScenario('get all heroes', 'unreachable');
+
+  return Promise.resolve('pending');
 }

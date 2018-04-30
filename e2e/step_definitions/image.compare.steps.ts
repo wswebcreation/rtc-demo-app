@@ -39,9 +39,11 @@ async function checkScreen(string: string): Promise<void | string> {
 
   // IMPLEMENT THE CHECK SCREEN COMPARE RESULT, SEE
   // https://github.com/wswebcreation/protractor-image-comparison/blob/master/docs/index.md#checkscreentag-options--promise
-  const compareResult = await browser.imageComparison.checkScreen(tagName);
+  const compareResult = 0;
 
   expect(compareResult).to.equal(0);
+
+  return Promise.resolve('pending');
 }
 
 /**
@@ -56,9 +58,11 @@ async function checkElement(string: string): Promise<void | string> {
 
   // IMPLEMENT THE CHECK ELEMENT COMPARE RESULT, SEE
   // https://github.com/wswebcreation/protractor-image-comparison/blob/master/docs/index.md#checkelementelement-tag-options--promise
-  const compareResult = await browser.imageComparison.checkElement(HeroesDetailPage.detail.card(string).element, tagName);
+  const compareResult = 0;
 
   expect(compareResult).to.equal(0);
+
+  return Promise.resolve('pending');
 }
 
 /**
@@ -75,9 +79,11 @@ async function checkFullpage(string: string): Promise<void | string> {
 
   // IMPLEMENT THE FULLPAGE COMPARE RESULT, SEE
   // https://github.com/wswebcreation/protractor-image-comparison/blob/master/docs/index.md#checkfullpagescreentag-options--promise
-  const compareResult = await browser.imageComparison.checkFullPageScreen(tagName);
+  const compareResult = 0;
 
   expect(compareResult).to.equal(0);
+
+  return Promise.resolve('pending');
 }
 
 /**
@@ -92,11 +98,9 @@ async function checkElementWithBlockout(string: string): Promise<void | string> 
 
   // IMPLEMENT THE ELEMENT COMPARE RESULT WITH BLOCKOUTS, SEE
   // https://github.com/wswebcreation/protractor-image-comparison/blob/master/docs/index.md#checkelementelement-tag-options--promise
-  const compareResult = await browser.imageComparison.checkElement(
-    HeroesDetailPage.detail.card(string).element,
-    tagName,
-    {blockOut: [{x: 400, y: 40, width: 40, height: 15}]}
-  );
+  const compareResult = 0;
 
   expect(compareResult).to.equal(0);
+
+  return Promise.resolve('pending');
 }
