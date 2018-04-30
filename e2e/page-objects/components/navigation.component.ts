@@ -9,8 +9,7 @@ const SELECTORS = {
 
 export class NavigationComponent {
   /**
-   * Get the heroes list button ElementFinder
-   *
+   * Get the heroes list button ElementFinder.
    * @return {ElementFinder}
    */
   public static get heroesListButton(): ElementFinder {
@@ -18,8 +17,7 @@ export class NavigationComponent {
   }
 
   /**
-   * Get the home button ElementFinder
-   *
+   * Get the home button ElementFinder.
    * @return {ElementFinder}
    */
   public static get homeButton(): ElementFinder {
@@ -27,8 +25,7 @@ export class NavigationComponent {
   }
 
   /**
-   * Get the RTC button ElementFinder
-   *
+   * Get the RTC button ElementFinder.
    * @return {ElementFinder}
    */
   public static get rtcButton(): ElementFinder {
@@ -36,8 +33,7 @@ export class NavigationComponent {
   }
 
   /**
-   * Get the autocomplete component
-   *
+   * Get the autocomplete component.
    * @return {AutoCompleteComponent}
    */
   public static get autoComplete(): AutoCompleteComponent {

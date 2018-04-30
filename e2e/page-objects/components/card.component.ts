@@ -12,32 +12,15 @@ export class CardComponent {
   }
 
   /**
-   * Get all the cards
+   * Get all the cards.
+   * @return {ElementArrayFinder}
    */
   public get allCards(): ElementArrayFinder {
     return $$(CARD_SELECTOR);
   }
 
   /**
-   * Get the card componentobject for card that is found based on an occurrence or a name.
-   *
-   * @param {number | string} needle The occurrence, count form 0, or the name
-   */
-  public card(needle: number | string): CardComponent {
-    let elementFinder;
-
-    if (isNumber(needle)) {
-      elementFinder = this.allCards.get(needle - 1);
-    } else {
-      elementFinder = this.allCards.filter((elm) => elm.getText().then((text) => text.includes(needle))).first();
-    }
-
-    return new CardComponent(elementFinder);
-  }
-
-  /**
-   * Get the element
-   *
+   * Get the element.
    * @return {ElementFinder}
    */
   public get element(): ElementFinder {
@@ -45,34 +28,50 @@ export class CardComponent {
   }
 
   /**
-   * Get the header component object
+   * Get the header component object.
+   * @return {HeaderComponent}
    */
   public get header(): HeaderComponent {
     return new HeaderComponent(this.elementFinder);
   }
+
+  /**
+   * Get the card componentobject for card that is found based on an occurrence or a name.
+   * @param {number | string} needle The occurrence, count form 0, or the name.
+   * @return {CardComponent}
+   */
+  public card(needle: number | string): CardComponent {
+    const elementFinder = isNumber(needle)
+      ? this.allCards.get(needle - 1)
+      : this.allCards.filter((elm) => elm.getText().then((text) => text.includes(needle))).first();
+
+    return new CardComponent(elementFinder);
+  }
 }
 
 class HeaderComponent {
-
   constructor(private elementFinder: ElementFinder) {
   }
 
   /**
-   * Get the title Elementfinder
+   * Get the title ElementFinder.
+   * @return {ElementFinder}
    */
   public get title(): ElementFinder {
     return this.elementFinder.$(HEADER_TITLE_SELECTOR);
   }
 
   /**
-   * Get the likes Elementfinder
+   * Get the likes ElementFinder.
+   * @return {ElementFinder}
    */
   public get likes(): ElementFinder {
     return this.elementFinder.$(HEADER_LIKES_TEXT_SELECTOR);
   }
 
   /**
-   * Get the likes button Elementfinder
+   * Get the likes button ElementFinder.
+   * @return {ElementFinder}
    */
   public get likeButton(): ElementFinder {
     return this.elementFinder.$(HEADER_LIKE_BUTTON_SELECTOR);

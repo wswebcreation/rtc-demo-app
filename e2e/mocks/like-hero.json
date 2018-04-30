@@ -1,7 +1,7 @@
 {
   "expression": "heroes/\\d+/like",
   "method": "POST",
-  "name": "likes hero",
+  "name": "like a hero",
   "isArray": false,
   "responses": {
     "default": {

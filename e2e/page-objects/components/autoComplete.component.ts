@@ -6,8 +6,7 @@ const OPTIONS_SELECTOR = 'mat-option';
 
 export class AutoCompleteComponent {
   /**
-   * Get the searchbox ElementFinder
-   *
+§   * Get the searchbox ElementFinder.
    * @return {ElementFinder}
    */
   public get input(): ElementFinder {
@@ -15,8 +14,7 @@ export class AutoCompleteComponent {
   }
 
   /**
-   * Get the options ElementArrayFinder
-   *
+   * Get the options ElementArrayFinder.
    * @return {ElementArrayFinder}
    */
   public get options(): ElementArrayFinder {
@@ -24,10 +22,8 @@ export class AutoCompleteComponent {
   }
 
   /**
-   * Get the selected option ElementFinder
-   *
-   * @param {number | string} needle The occurrence, count form 0, or the name
-   *
+   * Get the selected option ElementFinder.
+   * @param {number | string} needle The occurrence, count form 0, or the name.
    * @return {ElementFinder}
    */
   public option(needle: number | string): ElementFinder {
@@ -37,25 +33,21 @@ export class AutoCompleteComponent {
   }
 
   /**
-   * Find a hero by entering the name of a hero
-   *
-   * @param {string} string
-   *
+   * Find a hero by entering the name of a hero.
+   * @param {string} criteria The criteria.
    * @return {Promise<void>}
    */
-  public async findHero(string) {
-    await this.input.clear().sendKeys(string);
+  public async findHero(criteria): Promise<void> {
+    await this.input.clear().sendKeys(criteria);
   }
 
   /**
-   * Select a hero from the autocomplete
-   *
-   * @param {string} string
-   *
+   * Select a hero from the autocomplete.
+   * @param {string} criteria The criteria.
    * @return {Promise<void>}
    */
-  public async selectHero(string) {
-    await this.findHero(string);
-    await this.option(string).click();
+  public async selectHero(criteria: string): Promise<void> {
+    await this.findHero(criteria);
+    await this.option(criteria).click();
   }
 }
