@@ -9,7 +9,7 @@ import {upperCaseFirstLetter, World} from '../../utils/utils';
  * - if the scenario failed and a screenshot needs to be added to the report
  * - reset apimock
  */
-After(async (scenarioResult: HookScenarioResult) => {
+After(async function (scenarioResult: HookScenarioResult) {
   const world: any = this;
 
   if (scenarioResult.result.status === Status.FAILED) {
