@@ -1,11 +1,7 @@
 import {When} from 'cucumber';
 import {browser} from 'protractor';
+import {NgApimock} from '../utils/utils';
 
-interface NgApimock {
-  delayResponse: (name: string, delay: number) => {};
-  setGlobalVariable: (key: string, value: string | number) => {};
-  selectScenario: (name: string, scenarioName: string) => {};
-}
 declare const ngApimock: NgApimock;
 
 When('I delay the heroes service', delayHeroesServiceGetHeroes);

@@ -2,7 +2,9 @@ import {After, HookScenarioResult, Status} from 'cucumber';
 import {resolve} from 'path';
 import {browser} from 'protractor';
 import {WriteStream, ensureDirSync, createWriteStream} from 'fs-extra';
-import {upperCaseFirstLetter, World} from '../../utils/utils';
+import {NgApimock, upperCaseFirstLetter, World} from '../../utils/utils';
+
+declare const ngApimock: NgApimock;
 
 /**
  * After hook to check:
