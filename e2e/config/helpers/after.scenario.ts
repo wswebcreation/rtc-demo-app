@@ -5,17 +5,22 @@ import {WriteStream, ensureDirSync, createWriteStream} from 'fs-extra';
 import {upperCaseFirstLetter, World} from '../../utils/utils';
 
 /**
- * After hook to check if the scenario failed and a screenshot needs to be added to the report
+ * After hook to check:
+ * - if the scenario failed and a screenshot needs to be added to the report
+ * - reset apimock
  */
-After(function (scenarioResult: HookScenarioResult): Promise<void> {
-    const world: any = this;
+After(async (scenarioResult: HookScenarioResult) => {
+  const world: any = this;
 
-    if (scenarioResult.result.status === Status.FAILED) {
-        return saveFailedScenarioScreenshot(world, scenarioResult);
-    }
-
-    return Promise.resolve();
+  if (scenarioResult.result.status === Status.FAILED) {
+    await saveFailedScenarioScreenshot(world, scenarioResult);
+  }
+  await ngApimock.setAllScenariosToDefault();
+  await ngApimock.delayResponse('get all heroes', 0);
+  await ngApimock.deleteGlobalVariable('my-name');
+  await ngApimock.deleteGlobalVariable('my-likes');
 });
+
 
 /**
  * Save a screenshot when a scenario failed

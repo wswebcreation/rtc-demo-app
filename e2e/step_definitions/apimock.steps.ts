@@ -1,4 +1,4 @@
-import {After, When} from 'cucumber';
+import {When} from 'cucumber';
 
 When('I delay the heroes service', delayHeroesServiceGetHeroes);
 When('I set variable {string} to {string}', setVariable);
@@ -30,16 +30,3 @@ async function setVariable(key: string, value: string): Promise<void> {
 async function takeHeroesServiceGetHeroesOffine(): Promise<void> {
   await ngApimock.selectScenario('get all heroes', 'unreachable');
 }
-
-/**
- * Reset the state after the test!!!
- */
-After(async () => {
-  await ngApimock.setAllScenariosToDefault();
-  await ngApimock.delayResponse('get all heroes', 0);
-  await ngApimock.deleteGlobalVariable('my-name');
-  await ngApimock.deleteGlobalVariable('my-likes');
-});
-
-
-
