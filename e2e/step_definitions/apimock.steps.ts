@@ -16,7 +16,7 @@ When('I take the heroes service offline', takeHeroesServiceGetHeroesOffline);
  * Delay the heroes service response.
  * @returns {Promise<void>}
  */
-async function delayHeroesServiceGetHeroes(): Promise<void> {
+async function delayHeroesServiceGetHeroes(): Promise<void | string> {
   await browser.waitForAngularEnabled(false);
   // IMPLEMENT THE DELAY, SEE
   // https://github.com/mdasberg/ng-apimock#available-functions
@@ -31,7 +31,7 @@ async function delayHeroesServiceGetHeroes(): Promise<void> {
  * @param {string} value The value.
  * @return {Promise<void>}
  */
-async function setVariable(key: string, value: string): Promise<void> {
+async function setVariable(key: string, value: string): Promise<void | string> {
   // IMPLEMENT THE VARIABLES, SEE
   // https://github.com/mdasberg/ng-apimock#available-functions
   await ngApimock.setGlobalVariable(key, value);
@@ -43,7 +43,7 @@ async function setVariable(key: string, value: string): Promise<void> {
  * Set the heroes service to be unreachable.
  * @returns {Promise<void>}
  */
-async function takeHeroesServiceGetHeroesOffline(): Promise<void> {
+async function takeHeroesServiceGetHeroesOffline(): Promise<void | string> {
   // IMPLEMENT THE DELAY, SEE
   // https://github.com/mdasberg/ng-apimock#available-functions
   await ngApimock.selectScenario('get all heroes', 'unreachable');
