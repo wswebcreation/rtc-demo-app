@@ -1,4 +1,7 @@
 import {When} from 'cucumber';
+import {browser} from 'protractor';
+
+declare const ngApimock: any;
 
 When('I delay the heroes service', delayHeroesServiceGetHeroes);
 When('I set variable {string} to {string}', setVariable);
