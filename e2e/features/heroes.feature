@@ -1,5 +1,6 @@
 Feature: Basic setup
 
+  @demo
   Scenario: Validate likes on name on top page
     Given I open the heroes app
     And "Wim Selles" has 9832 likes

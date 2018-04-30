@@ -4,12 +4,11 @@ import {browser} from 'protractor';
 import {WriteStream, ensureDirSync, createWriteStream} from 'fs-extra';
 import {upperCaseFirstLetter, World} from '../../utils/utils';
 
+/**
+ * After hook to check if the scenario failed and a screenshot needs to be added to the report
+ */
 After(function (scenarioResult: HookScenarioResult): Promise<void> {
     const world: any = this;
-
-    if (scenarioResult.result.status === Status.PENDING) {
-        this.attach(browser.pendingMessage, 'text/plain');
-    }
 
     if (scenarioResult.result.status === Status.FAILED) {
         return saveFailedScenarioScreenshot(world, scenarioResult);

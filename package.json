@@ -11,7 +11,9 @@
     "postinstall": "npm run webdriver.update",
     "webdriver.update": "webdriver-manager update",
     "webdriver.start": "webdriver-manager start",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "demo.green": "npm run e2e -- --tags=@demo --nocss --openReportInBrowser",
+    "demo.pic": "npm run e2e -- --tags=@demo --nocss --pic"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +43,7 @@
     "@types/jasminewd2": "2.0.2",
     "@types/lodash": "^4.14.107",
     "@types/node": "9.6.6",
+    "@types/yargs": "^11.0.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "codelyzer": "4.2.1",

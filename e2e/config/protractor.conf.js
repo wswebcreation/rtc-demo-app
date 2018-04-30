@@ -1,3 +1,4 @@
+const fs = require('fs-extra');
 const argv = require('yargs').argv;
 const path = require('path');
 const protractorImageComparison = require('protractor-image-comparison');
@@ -37,7 +38,6 @@ exports.config = {
    */
   capabilities: {
     browserName: 'chrome',
-    shardTestFiles: true,
     maxInstances: 1,
     // Cucumber specific instance options
     cucumberOpts: {
@@ -81,20 +81,40 @@ exports.config = {
   baseUrl: 'http://localhost:4300/',
   seleniumAddress: 'http://localhost:4444/wd/hub/',
   disableChecks: true,
-  beforeLaunch: function () {
+  beforeLaunch: () => {
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'
     });
+
+    console.log(`
+=================================================================================
+    The '.tmp/report' and '.tmp/screenshots'-folder is being removed. 
+    This is the folder that holds all the reports and failure screenshots.
+=================================================================================\n`);
+    fs.emptyDirSync('.tmp/report');
+    fs.emptyDirSync('.tmp/screenshots');
   },
-  onPrepare() {
+  onPrepare: () => {
+    /**
+     * For ng-apimock
+     */
     global.ngApimock = require(path.resolve(cwd, './.tmp/ngApimock/protractor.mock.js'));
+
+    /**
+     * For protractor-image-comparison
+     */
     browser.imageComparison = new protractorImageComparison({
       // Required
       baselineFolder: path.resolve(cwd, './e2e/baseline/'),
       screenshotPath: path.resolve(cwd, './.tmp/image-compare/'),
       // Optional
-      autoSaveBaseline: true,
+      autoSaveBaseline: true, // set this to false if you want to create an automatic baseline
+      debug: false            // set this to `true` to see some debugging and see blocked out images in the diff folder
     });
+
+    /**
+     * Get the browername and set the default screensize
+     */
     return browser.getCapabilities()
       .then((capabilities) => {
         browser.browserName = capabilities.get('browserName');
@@ -113,7 +133,7 @@ exports.config = {
       jsonOutputPath: '.tmp/report/json-output',
       metadataKey: 'deviceProperties',
       displayDuration: true,
-      openReportInBrowser: argv.openReportInBrowser === 'true',
+      openReportInBrowser: argv.openReportInBrowser,
       removeExistingJsonReportFile: true,
       removeOriginalJsonReportFile: true
     }
