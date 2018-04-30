@@ -228,7 +228,7 @@
         }
       ]
     },
-    "error": {
+    "unreachable": {
       "status": 500
     }
   }

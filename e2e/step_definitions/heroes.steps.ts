@@ -48,11 +48,19 @@ async function checkDetailPageShown(person: string): Promise<void> {
  * Check the error is shown.
  * @return {Promise<void>}
  */
-async function openHeroesApp(): Promise<void> {
-  await browser.get('#/');
-  if (argv.nocss) {
-    await removeAllStyle();
-  }
+async function checkError(): Promise<void> {
+  expect(await(ErrorDialogComponent.message.getText()))
+    .to.equal('An error occured. Please try again!');
+}
+
+/**
+ * Check the amount of options in the autocomplete.
+ * @param {number} amount The amount.
+ * @return {Promise<void>}
+ */
+async function checkFoundOptions(amount: number): Promise<void> {
+  expect(await(NavigationComponent.autoComplete.options.count()))
+    .to.equal(amount, 'Amount of options');
 }
 
 /**

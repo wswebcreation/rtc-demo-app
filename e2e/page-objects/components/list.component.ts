@@ -19,7 +19,7 @@ export class ListItemComponent {
   }
 
   /**
-   * Get the title.
+   * Get the title ElementFinder.
    * @return {ElementFinder}
    */
   public get title(): ElementFinder {
@@ -27,7 +27,7 @@ export class ListItemComponent {
   }
 
   /**
-   * Get the likes.
+   * Get the likes ElementFinder.
    * @return {ElementFinder}
    */
   public get likes(): ElementFinder {
@@ -35,7 +35,7 @@ export class ListItemComponent {
   }
 
   /**
-   * Get the likes button.
+   * Get the likes button ElementFinder.
    * @return {ElementFinder}
    */
   public get likeButton(): ElementFinder {
