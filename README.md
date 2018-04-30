@@ -50,6 +50,3 @@ MIT
 
 ## Credits
 We used this project ([angular5-example-app](https://github.com/Ismaestro/angular5-example-app), made by [Ismael Ramos](https://github.com/Ismaestro)) as an idea and rewritten and adjusted it to our needs.
-
-
-// giphy homer delay
