@@ -16,7 +16,7 @@ Feature: Basic setup
   Scenario: Validate amount of heroes on the list page
     Given I open the heroes app
     And I go to the Heroes list page
-    Then I would see 30 listed heroes
+    Then I would see 31 listed heroes
 
   Scenario: Find a hero
     Given I open the heroes app

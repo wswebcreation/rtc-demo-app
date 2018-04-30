@@ -36,8 +36,7 @@ export class CardComponent {
   }
 
   /**
-   * Get the element
-   *
+   * Get the element.
    * @return {ElementFinder}
    */
   public get element(): ElementFinder {
@@ -45,7 +44,8 @@ export class CardComponent {
   }
 
   /**
-   * Get the header component object
+   * Get the header component object.
+   * @return {HeaderComponent}
    */
   public get header(): HeaderComponent {
     return new HeaderComponent(this.elementFinder);
@@ -53,26 +53,28 @@ export class CardComponent {
 }
 
 class HeaderComponent {
-
   constructor(private elementFinder: ElementFinder) {
   }
 
   /**
-   * Get the title Elementfinder
+   * Get the title.
+   * @return {ElementFinder}
    */
   public get title(): ElementFinder {
     return this.elementFinder.$(HEADER_TITLE_SELECTOR);
   }
 
   /**
-   * Get the likes Elementfinder
+   * Get the likes.
+   * @return {ElementFinder}
    */
   public get likes(): ElementFinder {
     return this.elementFinder.$(HEADER_LIKES_TEXT_SELECTOR);
   }
 
   /**
-   * Get the likes button Elementfinder
+   * Get the likes button.
+   * @return {ElementFinder}
    */
   public get likeButton(): ElementFinder {
     return this.elementFinder.$(HEADER_LIKE_BUTTON_SELECTOR);

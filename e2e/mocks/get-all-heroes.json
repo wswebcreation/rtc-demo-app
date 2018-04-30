@@ -1,7 +1,7 @@
 {
   "expression": "/heroes$",
   "method": "GET",
-  "name": "get all hero",
+  "name": "get all heroes",
   "isArray": true,
   "responses": {
     "default": {
@@ -218,6 +218,13 @@
           "alterEgo": "",
           "likes": 4098,
           "default": true
+        },
+        {
+          "id": 40,
+          "name": "%%my-name%%",
+          "alterEgo": "",
+          "likes": "%%my-likes%%",
+          "default": false
         }
       ]
     },
