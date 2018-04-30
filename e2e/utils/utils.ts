@@ -8,6 +8,14 @@ export interface World {
   attach: ((arg1: string | Buffer, arg2: string) => void);
 }
 
+export interface NgApimock {
+  delayResponse: (name: string, delay: number) => {};
+  setGlobalVariable: (key: string, value: string | number) => {};
+  selectScenario: (name: string, scenarioName: string) => {};
+  setAllScenariosToDefault: () => {};
+  deleteGlobalVariable: (key: string) => {};
+}
+
 /**
  * METHODS
  */
