@@ -1,13 +1,12 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
-
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import 'rxjs/add/observable/throw';
-import {Hero} from './hero';
-import {MatDialog, MatSnackBar} from '@angular/material';
-import {ErrorComponent} from './error/error.component';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
+import { Hero } from '../model/hero';
+import { ErrorComponent } from '../error/error.component';
 
 @Injectable()
 export class HeroesService {
@@ -53,7 +52,7 @@ export class HeroesService {
   }
 
   showDialog(message): void {
-    if(this.dialog.openDialogs.length === 0) {
+    if (this.dialog.openDialogs.length === 0) {
       this.dialog.open(ErrorComponent, {
         width: '300px',
         data: {message: message}
