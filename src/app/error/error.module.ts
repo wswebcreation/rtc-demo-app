@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
-import {MatDialogModule,} from '@angular/material';
-import {ErrorComponent} from './error.component';
+import { NgModule } from '@angular/core';
+import { MatDialogModule, } from '@angular/material';
+import { ErrorComponent } from './error.component';
 
 @NgModule({
   imports: [

@@ -1,13 +1,11 @@
-import {NgModule} from "@angular/core";
-
-
-import {MatAutocompleteModule, MatButtonModule, MatFormFieldModule, MatInputModule} from "@angular/material";
-import {CommonModule} from "@angular/common";
-import {NavComponent} from "./nav.component";
-import {HeroesModule} from "../heroes/heroes.module";
-import {ReactiveFormsModule} from "@angular/forms";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {RouterModule} from "@angular/router";
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { ServicesModule } from '../services/services.module';
+import { NavComponent } from './nav.component';
 
 
 @NgModule({
@@ -17,7 +15,7 @@ import {RouterModule} from "@angular/router";
   imports: [
     BrowserAnimationsModule,
     CommonModule,
-    HeroesModule,
+    ServicesModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatFormFieldModule,

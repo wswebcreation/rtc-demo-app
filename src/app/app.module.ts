@@ -1,11 +1,10 @@
-import {BrowserModule} from "@angular/platform-browser";
-import {NgModule} from "@angular/core";
-
-
-import {AppComponent} from "./app.component";
-import {AppRoutingModule} from "./app.routing.module";
-import {NavModule} from "./nav/nav.module";
-
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+import { baseRoutes } from './app.routing';
+import { HomeModule } from './home/home.module';
+import { NavModule } from './nav/nav.module';
 
 @NgModule({
   declarations: [
@@ -13,10 +12,10 @@ import {NavModule} from "./nav/nav.module";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    NavModule
+    NavModule,
+    HomeModule,
+    RouterModule.forRoot(baseRoutes, {useHash: true})
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

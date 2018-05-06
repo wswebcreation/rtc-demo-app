@@ -9,9 +9,12 @@
 
 # dependencies
 /node_modules
+yarn.lock
+yarn-error.lock
 
 # IDEs and editors
 /.idea
+*.iml
 .project
 .classpath
 .c9/

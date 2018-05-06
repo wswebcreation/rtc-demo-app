@@ -6,14 +6,15 @@
 <mat-grid-list cols="3" rowHeight="1:1" gutterSize="15">
 
   <mat-grid-tile *ngFor="let hero of heroes">
-      <mat-card class="hero-card">
+    <mat-card class="hero-card">
       <mat-card-header>
         <img *ngIf="hero.default" (click)="details(hero);" mat-card-avatar
              src="assets/images/heroes/{{hero.id}}-thumbnail.jpg">
         <img *ngIf="!hero.default" (click)="details(hero);" mat-card-avatar
              src="assets/images/heroes/default.png">
         <mat-card-title [ngClass]="{'cp': hero.default}" (click)="details(hero);">{{hero.name}}</mat-card-title>
-        <mat-card-subtitle [ngClass]="{'cp': hero.default}" (click)="details(hero);">{{hero.alterEgo}}</mat-card-subtitle>
+        <mat-card-subtitle [ngClass]="{'cp': hero.default}" (click)="details(hero);">{{hero.alterEgo}}
+        </mat-card-subtitle>
         <div class="flex-spacer"></div>
         <p class="likes">{{hero.likes}}</p>
         <mat-icon matTooltip="{{(canVote ? 'Can vote' : 'Cannot vote')}}"
