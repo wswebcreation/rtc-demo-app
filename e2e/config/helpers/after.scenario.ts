@@ -17,6 +17,10 @@ After(async function (scenarioResult: HookScenarioResult) {
   if (scenarioResult.result.status === Status.FAILED) {
     await saveFailedScenarioScreenshot(world, scenarioResult);
   }
+  await ngApimock.setAllScenariosToDefault();
+  await ngApimock.delayResponse('get all heroes', 0);
+  await ngApimock.deleteGlobalVariable('my-name');
+  await ngApimock.deleteGlobalVariable('my-likes');
 });
 
 
