@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
-import {HeroesService} from "../heroes/heroes.service";
-import {Hero} from "../heroes/hero";
+import {HeroesService} from "../services/heroes.service";
+import {Hero} from "../model/hero";
 import {FormControl} from "@angular/forms";
 
 import "rxjs/add/operator/startWith";
