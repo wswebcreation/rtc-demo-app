@@ -25,7 +25,7 @@ The workshop will be given by [Wim Selles](https://romaniatesting.ro/speakers/wi
 - `cd rtc-demo-app` to go into the demo folder
 - `npm i` - Installs everything needed
 - `npm start` - Starts the app.
-- `npm run start.mocking` - Starts the mocking. Then, go to `localhost:3000/mocking`
+- `npm run start.mocking` - Starts the mocking.
 - go to `http://localhost:4300/` to open the demo app
 - go to `http://localhost:3000/mocking/` to open the mocking interface
 
