@@ -100,7 +100,7 @@ async function demoCheckLikes(selector: string | number, amount: number) {
 
   // For demo the green pipeline mistake
   if (argv.pic) {
-    const compareResult = await browser.imageComparison.checkScreen('top_heroes');
+    const compareResult = await browser.protractorImageComparison.checkScreen('top_heroes');
 
     return expect(compareResult).to.equal(0);
   }

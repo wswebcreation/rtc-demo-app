@@ -4,9 +4,21 @@ import {NgApimock} from '../utils/utils';
 
 declare const ngApimock: NgApimock;
 
+When('I take the heroes service offline', takeHeroesServiceGetHeroesOffline);
 When('I delay the heroes service', delayHeroesServiceGetHeroes);
 When('I set variable {string} to {string}', setVariable);
-When('I take the heroes service offline', takeHeroesServiceGetHeroesOffline);
+
+/**
+ * Set the heroes service to be unreachable.
+ * @returns {Promise<void>}
+ */
+async function takeHeroesServiceGetHeroesOffline(): Promise<void | string> {
+  // WE HAVE ALREADY IMPLEMENTED THE SELECT SCENARIO FOR YOU AS AN EXAMPLE. FOR DOCUMENTATION OF NG-APIMOCK SEE
+  // https://github.com/mdasberg/ng-apimock#available-functions
+  // WE USE `await` IN FRONT OF THE COMMAND TO BE SURE THE PROMISE IS RESOLVED
+  await ngApimock.selectScenario('get all heroes', 'unreachable');
+}
+
 
 /**
  * Delay the heroes service response.
@@ -16,7 +28,9 @@ async function delayHeroesServiceGetHeroes(): Promise<void | string> {
   await browser.waitForAngularEnabled(false);
   // IMPLEMENT THE DELAY, SEE
   // https://github.com/mdasberg/ng-apimock#available-functions
+  // USE `await` IN FRONT OF THE COMMAND TO BE SURE THE PROMISE IS RESOLVED, SEE ABOVE EXAMPLE
 
+  // REMOVE THIS LINE AFTER THE YOU HAVE IMPLEMENTED THE DELAY
   return Promise.resolve('pending');
 }
 
@@ -29,17 +43,8 @@ async function delayHeroesServiceGetHeroes(): Promise<void | string> {
 async function setVariable(key: string, value: string): Promise<void | string> {
   // IMPLEMENT THE VARIABLES, SEE
   // https://github.com/mdasberg/ng-apimock#available-functions
+  // USE `await` IN FRONT OF THE COMMAND TO BE SURE THE PROMISE IS RESOLVED, SEE ABOVE EXAMPLE
 
-  return Promise.resolve('pending');
-}
-
-/**
- * Set the heroes service to be unreachable.
- * @returns {Promise<void>}
- */
-async function takeHeroesServiceGetHeroesOffline(): Promise<void | string> {
-  // IMPLEMENT THE DELAY, SEE
-  // https://github.com/mdasberg/ng-apimock#available-functions
-
+  // REMOVE THIS LINE AFTER THE YOU HAVE IMPLEMENTED THE VARIABLES
   return Promise.resolve('pending');
 }

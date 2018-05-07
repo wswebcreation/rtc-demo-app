@@ -103,7 +103,7 @@ exports.config = {
     /**
      * For protractor-image-comparison
      */
-    browser.imageComparison = new protractorImageComparison({
+    browser.protractorImageComparison = new protractorImageComparison({
       // Required
       baselineFolder: path.resolve(cwd, './e2e/baseline/'),
       screenshotPath: path.resolve(cwd, './.tmp/image-compare/'),
