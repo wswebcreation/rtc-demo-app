@@ -1,15 +1,14 @@
 #medium {
   width: 55%;
 }
-:host {
 
+:host {
   /deep/ .mat-figure {
     justify-content: unset;
     align-items: unset;
   }
 
   /deep/ .mat-list {
-
     .mat-list-item {
       .mat-list-item-with-avatar {
         height: 63px;
@@ -23,12 +22,11 @@
         overflow: hidden;
         padding: 0;
       }
-
     }
+
     /deep/ .mat-list-avatar {
       padding-right: 16px;
     }
-
   }
 
   /deep/ .mat-list-avatar {

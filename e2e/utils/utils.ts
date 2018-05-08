@@ -13,6 +13,7 @@ export interface NgApimock {
   setGlobalVariable: (key: string, value: string | number) => {};
   selectScenario: (name: string, scenarioName: string) => {};
   setAllScenariosToDefault: () => {};
+  setAllScenariosToPassThrough: () => {};
   deleteGlobalVariable: (key: string) => {};
 }
 

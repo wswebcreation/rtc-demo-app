@@ -1,15 +1,14 @@
-import {Component, OnInit} from "@angular/core";
-import {Hero} from "../../model/hero";
-import {HeroesService} from "../../services/heroes.service";
-import {ActivatedRoute} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {Hero} from '../../model/hero';
+import {HeroesService} from '../../services/heroes.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: "app-details",
-  templateUrl: "./details.component.html",
-  styleUrls: ["./details.component.scss"]
+  selector: 'app-details',
+  templateUrl: './details.component.html',
+  styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-
   hero: Hero;
   loading: boolean;
   canVote: boolean;
@@ -31,7 +30,7 @@ export class DetailsComponent implements OnInit {
             this.loading = false;
           });
       }
-    },(error: Response) => {
+    }, (error: Response) => {
       this.loading = false;
     });
   }
@@ -43,5 +42,4 @@ export class DetailsComponent implements OnInit {
       console.error(error);
     });
   }
-
 }
