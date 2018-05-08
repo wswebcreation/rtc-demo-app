@@ -3,5 +3,5 @@ export interface Hero {
   name: string;
   alterEgo: string;
   likes: number;
-  default?:boolean;
+  default?: boolean;
 }

@@ -1,12 +1,12 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { MatDialog, MatSnackBar } from '@angular/material';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs/Observable';
-import { Hero } from '../model/hero';
-import { ErrorComponent } from '../error/error.component';
+import {Observable} from 'rxjs/Observable';
+import {Hero} from '../model/hero';
+import {ErrorComponent} from '../error/error.component';
 
 @Injectable()
 export class HeroesService {

@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { baseRoutes } from './app.routing';
-import { HomeModule } from './home/home.module';
-import { NavModule } from './nav/nav.module';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {RouterModule} from '@angular/router';
+import {AppComponent} from './app.component';
+import {baseRoutes} from './app.routing';
+import {HomeModule} from './home/home.module';
+import {NavModule} from './nav/nav.module';
 
 @NgModule({
   declarations: [

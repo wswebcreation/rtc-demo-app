@@ -4,7 +4,7 @@
   "name": "get all heroes",
   "isArray": true,
   "responses": {
-    "default": {
+    "rtc-heroes": {
       "default": true,
       "status": 200,
       "headers": {},
