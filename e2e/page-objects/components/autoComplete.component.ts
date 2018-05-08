@@ -6,7 +6,7 @@ const OPTIONS_SELECTOR = 'mat-option';
 
 export class AutoCompleteComponent {
   /**
-§   * Get the searchbox ElementFinder.
+   §   * Get the searchbox ElementFinder.
    * @return {ElementFinder}
    */
   public get input(): ElementFinder {
