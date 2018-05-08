@@ -45,6 +45,29 @@ To run the tests the the following needs to be started:
 - the selenium server. Run `npm run webdriver.start`. If you get an error run `npm run webdriver.update` and try `npm run webdriver.start` again.
 - and run the tests, use `npm run e2e`, see [protractor.conf.js](./e2e/config/protractor.conf.js) how to provide specific features / tags
 
+## Assignments
+First of all checkout the `get-your-hands-dirty` branch with the command `git checkout get-your-hands-dirty`. 
+
+You will then see 2 feature-files extra in the folder [e2e/features](./e2e/features) called `ng-apimock.feature` and `image.compare.feature` 
+and 2 step-files extra in the folder [e2e/step_definitions](./e2e/step_definitions) called `ng-apimock.steps.ts` and `image.compare.steps.ts`. Those files will be used during this workshop.
+
+### Running the tests
+See [Testing with protractor](./README.md#testing-with-protractor)
+
+### ng-Apimock
+Before you implement the tests, first run the following command `npm run e2e -- --feature=ng-apimock`. This will run all the ng-apimock tests. 
+You will see that 2 tests have the status `Pending` in the report.
+
+The goal of this session is to implement the 2 pending tests based on the provided documentation. As an example we've already implemented the first test with the correct syntax and code.
+When you are done, or you want to see the result of the just implemented code, run `npm run e2e -- --feature=ng-apimock` again.
+
+### protractor-image-comparison
+Before you implement the tests, first run the following command `npm run e2e -- --feature=image.compare`. This will run all the image-compare tests. 
+You will see that 3 tests have the status `Pending` in the report.
+
+The goal of this session is to implement the 3 pending tests based on the provided documentation. As an example we've already implemented the first test with the correct syntax and code.
+When you are done, or you want to see the result of the just implemented code, run `npm run e2e -- --feature=image.compare` again.
+
 ## License
 
 MIT
