@@ -47,7 +47,7 @@ async function checkElement(string: string): Promise<void | string> {
   // IMPLEMENT THE CHECK ELEMENT COMPARE RESULT, SEE
   // https://github.com/wswebcreation/protractor-image-comparison/blob/master/docs/index.md#checkelementelement-tag-options--promise
   // USE `await` IN FRONT OF THE COMMAND TO BE SURE THE PROMISE IS RESOLVED, SEE ABOVE EXAMPLE
-  const compareResult = await browser.imageComparison.checkElement(HeroesDetailPage.detail.card(string).element, tagName);
+  const compareResult = await browser.protractorImageComparison.checkElement(HeroesDetailPage.detail.card(string).element, tagName);
 
   expect(compareResult).to.equal(0);
 }
@@ -67,7 +67,7 @@ async function checkFullpage(string: string): Promise<void | string> {
   // IMPLEMENT THE FULLPAGE COMPARE RESULT, SEE
   // https://github.com/wswebcreation/protractor-image-comparison/blob/master/docs/index.md#checkfullpagescreentag-options--promise
   // USE `await` IN FRONT OF THE COMMAND TO BE SURE THE PROMISE IS RESOLVED, SEE ABOVE EXAMPLE
-  const compareResult = await browser.imageComparison.checkFullPageScreen(tagName);
+  const compareResult = await browser.protractorImageComparison.checkFullPageScreen(tagName);
 
   expect(compareResult).to.equal(0);
 }
@@ -85,7 +85,7 @@ async function checkElementWithBlockout(string: string): Promise<void | string> 
   // IMPLEMENT THE ELEMENT COMPARE RESULT WITH BLOCKOUTS, SEE
   // https://github.com/wswebcreation/protractor-image-comparison/blob/master/docs/index.md#checkelementelement-tag-options--promise
   // USE `await` IN FRONT OF THE COMMAND TO BE SURE THE PROMISE IS RESOLVED, SEE ABOVE EXAMPLE
-  const compareResult = await browser.imageComparison.checkElement(
+  const compareResult = await browser.protractorImageComparison.checkElement(
     HeroesDetailPage.detail.card(string).element,
     tagName,
     {blockOut: [{x: 400, y: 40, width: 40, height: 15}]}
