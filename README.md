@@ -56,9 +56,9 @@ See [Testing with protractor](./README.md#testing-with-protractor)
 
 ### ng-Apimock
 Before you implement the tests, first run the following command `npm run e2e -- --feature=ng-apimock`. This will run all the ng-apimock tests. 
-You will see that 2 tests have the status `Pending` in the report.
+You will see that 3 tests have the status `Pending` in the report.
 
-The goal of this session is to implement the 2 pending tests based on the provided documentation. As an example we've already implemented the first test with the correct syntax and code.
+The goal of this session is to implement the 3 pending tests based on the provided documentation. As an example we've already implemented the first test with the correct syntax and code.
 When you are done, or you want to see the result of the just implemented code, run `npm run e2e -- --feature=ng-apimock` again.
 
 ### protractor-image-comparison

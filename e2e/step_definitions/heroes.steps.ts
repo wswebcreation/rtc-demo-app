@@ -11,23 +11,25 @@ import {NotificationComponent} from '../page-objects/components/notification.com
 import {ErrorDialogComponent} from '../page-objects/components/errorDialog.component';
 import {SpinnerComponent} from '../page-objects/components/spinner.component';
 
-Given('I open the heroes app', openHeroesApp);
-Given('{string} has {int} likes', checkLikes);
 Given('hero number {int} has {int} likes', checkLikes);
+Given('I open the heroes app', openHeroesApp);
+Given('I refresh the page', refresh);
 Given('I go to the Heroes list page', goToList);
 
 When('I like {string}', likeHero);
 When('I like hero number {int}', likeHero);
-When('I want to type into the "Find hero" searchbox', focusSearchBox);
 When('I refresh the heroes app', openHeroesApp);
-When('I type {string}', typeInSearchbox);
 When('I select {string}', selectInSearchbox);
+When('I type {string}', typeInSearchbox);
+When('I want to type into the "Find hero" searchbox', focusSearchBox);
 
+Then('{string} has {int} likes', checkLikes);
+Then('{string} has more than {int} likes', checkMoreThanLikes);
+Then('I would see {int} listed heroes', checkNumberOfHeroes);
 Then('the amount of likes of {string} equals {int}', demoCheckLikes);
 Then('the amount of likes of hero number {int} equals {int}', checkLikes);
 Then('the autocomplete contains {int} heroes', checkFoundOptions);
 Then('the detailpage of {string} is shown', checkDetailPageShown);
-Then('I would see {int} listed heroes', checkNumberOfHeroes);
 Then('the error is shown', checkError);
 Then('the spinner is shown', checkSpinner);
 
@@ -75,6 +77,17 @@ async function checkLikes(selector: string | number, amount: number): Promise<vo
 }
 
 /**
+ * Check the likes based on a name or card number.
+ * @param {string|number} selector The selector.
+ * @param {number} amount The amount.
+ * @returns {Promise<void>}
+ */
+async function checkMoreThanLikes(selector: string | number, amount: number): Promise<void> {
+  expect(parseInt(await (HeroesTopPage.overview.card(selector).header.likes.getText()), 10))
+    .to.be.above(amount);
+}
+
+/**
  * Check the number of heroes.
  * @param {number} amount The amount.
  * @return {Promise<void>}
@@ -86,6 +99,7 @@ async function checkNumberOfHeroes(amount: number): Promise<void> {
 
 async function checkSpinner(): Promise<void> {
   expect(await(SpinnerComponent.spinner.isPresent())).to.equal(true);
+  // TAKES CARE OF WAITING FOR ANGULAR (ASYNC STUFF)
   await browser.waitForAngularEnabled(true);
 }
 
@@ -142,6 +156,14 @@ async function openHeroesApp(): Promise<void> {
   if (argv.nocss) {
     await removeAllStyle();
   }
+}
+
+/**
+ * Refresh the page
+ * @return {Promise<void>}
+ */
+async function refresh(): Promise<void> {
+  await browser.refresh();
 }
 
 /**
