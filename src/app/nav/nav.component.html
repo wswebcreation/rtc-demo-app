@@ -14,9 +14,7 @@
     <mat-autocomplete #heroes="matAutocomplete">
       <mat-option *ngFor="let hero of filteredHeroes"
                   (onSelectionChange)="searchHero(hero)"
-                  [value]="hero.name">
-        {{hero.name}}
-      </mat-option>
+                  [value]="hero.name" [innerHtml]="hero.name"></mat-option>
     </mat-autocomplete>
   </nav>
 </header>

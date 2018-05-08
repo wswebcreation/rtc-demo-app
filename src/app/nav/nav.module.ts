@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatAutocompleteModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
-import { ServicesModule } from '../services/services.module';
-import { NavComponent } from './nav.component';
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatAutocompleteModule, MatButtonModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterModule} from '@angular/router';
+import {ServicesModule} from '../services/services.module';
+import {NavComponent} from './nav.component';
 
 
 @NgModule({
@@ -23,7 +23,9 @@ import { NavComponent } from './nav.component';
     ReactiveFormsModule,
     RouterModule
   ],
-  exports: [NavComponent]
+  exports: [
+    NavComponent
+  ]
 })
 export class NavModule {
 }

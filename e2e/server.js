@@ -9,17 +9,17 @@ const ngApimock = require('ng-apimock')();
  * - Watch mocks
  */
 const ngApimockConfig = {
-    src: "./e2e/mocks",
-    outputDir: ".tmp/ngApimock",
+  src: "./e2e/mocks",
+  outputDir: ".tmp/ngApimock",
 };
 ngApimock.run(ngApimockConfig);
 ngApimock.watch(ngApimockConfig.src);
 
 const app = express();
 const rtcProxyOptions = {
-    target: 'http://nodejs-example-app.herokuapp.com',
-    changeOrigin: true,
-    ws: false
+  target: 'http://nodejs-example-app.herokuapp.com',
+  changeOrigin: true,
+  ws: false
 };
 app.set('port', (process.env.PORT || 3000));
 
@@ -28,5 +28,5 @@ app.use(ngApimockRequest.ngApimockRequest);
 app.use('/', proxy(rtcProxyOptions));
 
 app.listen(app.get('port'), function () {
-    console.log('app running on port', app.get('port'));
+  console.log('app running on port', app.get('port'));
 });

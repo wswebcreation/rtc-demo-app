@@ -1,12 +1,12 @@
-import {Component, OnInit} from "@angular/core";
-import {HeroesService} from "../../services/heroes.service";
-import {Router} from "@angular/router";
-import {Hero} from "../../model/hero";
+import {Component, OnInit} from '@angular/core';
+import {HeroesService} from '../../services/heroes.service';
+import {Router} from '@angular/router';
+import {Hero} from '../../model/hero';
 
 @Component({
-  selector: "app-overview",
-  templateUrl: "./overview.component.html",
-  styleUrls: ["./overview.component.scss"]
+  selector: 'app-overview',
+  templateUrl: './overview.component.html',
+  styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
   heroes: Hero[];
