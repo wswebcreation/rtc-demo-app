@@ -39,7 +39,7 @@ The workshop will be given by [Wim Selles](https://romaniatesting.ro/speakers/wi
 ### Testing with protractor
 For running the protractor tests a selenium server needs to be started. The server will automatically be downloaded and updated after install.
 
-To run the tests the the following needs to be started:
+To run the tests the following needs to be started:
 - the app, see `npm start` (if not already started)
 - the mocking server, see `npm run start.mocking` (if not already started)
 - the selenium server. Run `npm run webdriver.start`. If you get an error run `npm run webdriver.update` and try `npm run webdriver.start` again.
